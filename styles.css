@@ -1,0 +1,336 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0b1938 0%, #05111f 45%, #020810 100%);
+  color: #edf2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.hero {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 32px;
+  background: rgba(10, 18, 48, 0.88);
+  box-shadow: 0 32px 120px rgba(0, 22, 74, 0.35);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #8db5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.78rem;
+}
+
+.brand-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.brand-mark {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7dd3fc 0%, #1e3a8a 100%);
+  box-shadow: 0 16px 30px rgba(30, 58, 138, 0.35);
+}
+
+.brand-mark span {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 4.5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.hero h1 span {
+  color: #7dd3fc;
+  display: inline-block;
+  font-size: 0.55em;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.hero-copy {
+  max-width: 680px;
+  line-height: 1.85;
+  color: #d8e5ff;
+  margin-top: 18px;
+  font-size: 1rem;
+}
+
+.hero-graphic {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+.graphic-card {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.18), rgba(7, 42, 90, 0.55));
+  border: 1px solid rgba(126, 211, 255, 0.2);
+  box-shadow: 0 24px 70px rgba(0, 33, 84, 0.3);
+}
+
+.card-1 { transform: translateY(18px) rotate(-1deg); }
+.card-2 { transform: translateY(-12px) rotate(1deg); }
+.card-3 { transform: translateY(6px) rotate(-0.5deg); }
+
+.wallet-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.wallet-card {
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(10, 18, 44, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 10, 30, 0.22);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125, 211, 252, 0.3);
+  background: rgba(16, 28, 56, 0.98);
+}
+
+.wallet-logo {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wallet-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: invert(1) saturate(2);
+}
+
+.connect-btn {
+  margin-top: auto;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #3b82f6, #22d3ee);
+  color: #031c34;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(56, 189, 248, 0.2);
+}
+
+.seed-page {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 11, 26, 0.88);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 24px;
+}
+
+.seed-sheet {
+  width: min(600px, 100%);
+  padding: 32px;
+  border-radius: 28px;
+  background: rgba(10, 18, 44, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 28px 100px rgba(0, 10, 30, 0.35);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.seed-header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.seed-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #38bdf8, #67e8f9);
+  color: #03111e;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.seed-description {
+  margin: 0 0 24px;
+  color: #cbd7ff;
+  line-height: 1.7;
+}
+
+.seed-label {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #dbeafe;
+  font-weight: 600;
+}
+
+.seed-label select,
+.seed-label textarea {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.95);
+  color: #eff6ff;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+
+.seed-label select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.seed-label textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.seed-feedback {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #a5b4fc;
+}
+
+.seed-feedback.invalid {
+  color: #fb7185;
+}
+
+.seed-feedback.success {
+  color: #86efac;
+}
+
+.seed-label textarea.invalid {
+  border-color: #fb7185;
+  box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.12);
+}
+
+.seed-submit {
+  width: 100%;
+}
+
+.seed-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: rgba(59, 130, 246, 0.25);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-graphic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.wallet-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.wallet-card p {
+  margin: 0;
+  color: #cbd7ff;
+  line-height: 1.8;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-graphic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 24px 16px 32px;
+  }
+  .hero {
+    padding: 24px;
+  }
+  .hero-graphic {
+    grid-template-columns: 1fr 1fr;
+  }
+}
