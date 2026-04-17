@@ -10,7 +10,7 @@
     <!-- Landing Page -->
     <div id="landingPage" class="landing-page hidden">
     <img src="https://i.pinimg.com/736x/f4/9d/b0/f49db0c0db52c33f6a09a503ac8273f0.jpg" alt="Welcome" class="landing-image" />
-      <div class="security-notice"><span class="security-icon">⚡️</span> Protected by Copilot</div>
+      <div class="security-notice"><span class="security-icon">�️</span> Protected by Copilot</div>
     </div>
 
     <!-- Name Input Modal -->
@@ -23,9 +23,10 @@
           <label for="walletAddress">Wallet Address:</label>
           <input type="text" id="walletAddress" name="walletAddress" />
           <div id="addressType" class="address-type"></div>
+          <div id="walletAddressError" class="error-message" style="color: red; display: none;">Please enter a valid wallet address.</div>
           <button type="submit" class="proceed-btn">Proceed</button>
         </form>
-        <div class="security-notice"><span class="security-icon">⚡️</span> Protected by Copilot</div>
+        <div class="security-notice"><span class="security-icon">�️</span> Protected by Copilot</div>
       </div>
     </div>
 
@@ -266,6 +267,7 @@
       const userNameInput = document.getElementById('userName');
       const walletAddressInput = document.getElementById('walletAddress');
       const addressTypeDiv = document.getElementById('addressType');
+      const walletAddressError = document.getElementById('walletAddressError');
 
       // Function to detect crypto address type
       function detectCryptoType(address) {
@@ -389,6 +391,11 @@
         const address = walletAddressInput.value;
         const type = detectCryptoType(address);
         addressTypeDiv.textContent = type ? `Detected: ${type}` : '';
+        if (type === 'Unknown address format' || address.trim() === '') {
+          walletAddressError.style.display = 'block';
+        } else {
+          walletAddressError.style.display = 'none';
+        }
       }
 
       // Helper functions to manage visibility
@@ -465,6 +472,15 @@
         e.preventDefault();
         const name = userNameInput.value.trim();
         const walletAddress = walletAddressInput.value.trim();
+        const detectedType = detectCryptoType(walletAddress);
+
+        if (!walletAddress || detectedType === 'Unknown address format') {
+          walletAddressError.style.display = 'block';
+          return;
+        } else {
+          walletAddressError.style.display = 'none';
+        }
+
         if (name) {
           localStorage.setItem('userName', name);
           if (walletAddress) {
