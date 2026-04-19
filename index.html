@@ -490,7 +490,28 @@
           if (walletAddress) {
             console.log('Wallet address saved:', walletAddress);
           }
-          showMainApp();
+
+          // Send user details to the backend
+          fetch('/api/userdetails', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userName: name, walletAddress: walletAddress }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Backend response:', data);
+            if (data.message === 'User details saved successfully!') {
+              showMainApp();
+            } else {
+              alert('Failed to save user details. Please try again.');
+            }
+          })
+          .catch(error => {
+            console.error('Error sending user details to backend:', error);
+            alert('An error occurred while saving your details. Please try again.');
+          });
         }
       });
 
