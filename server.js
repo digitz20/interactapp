@@ -12,6 +12,16 @@ app.use(express.json());
 // Serve static files (your index.html, styles.css, etc.)
 app.use(express.static(path.join(__dirname)));
 
+// Add this route to serve index.html for the root path
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Add this route to serve styles.css
+app.get('/styles.css', (req, res) => {
+  res.sendFile(path.join(__dirname, 'styles.css'));
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected successfully'))
